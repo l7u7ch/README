@@ -1,3 +1,4 @@
 .astro/
+.codex/
 dist/
 node_modules/
