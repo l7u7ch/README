@@ -1,0 +1,22 @@
+---
+import Avatar from "./Avatar.astro";
+import type { ProfileConfig } from "../config";
+
+export interface Props {
+  profile: ProfileConfig;
+}
+
+const { profile } = Astro.props;
+---
+
+<div class="flex flex-col items-center gap-4 text-center">
+  <Avatar src={profile.avatar} alt={profile.name} size={96} />
+
+  <h1 class="text-2xl font-bold tracking-tight">{profile.name}</h1>
+
+  <p
+    class="text-sm text-gray-600 dark:text-gray-400 whitespace-pre-line max-w-xs"
+  >
+    {profile.bio}
+  </p>
+</div>
