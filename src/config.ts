@@ -40,7 +40,7 @@ export const siteConfig: SiteConfig = {
   siteDescription: "",
   profile: {
     name: "l7u7ch",
-    bio: "Software Engineer & Warrior of Light",
+    bio: "System Architect & Warrior of Light",
     avatar: "/20260830032843.png",
   },
   snsLinks: [
