@@ -36,12 +36,12 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  siteTitle: "ZELVON",
+  siteTitle: "l7u7ch",
   siteDescription: "",
   profile: {
     name: "l7u7ch",
     bio: "Software Engineer & Warrior of Light",
-    avatar: "/botttsNeutral-1773378169241.svg",
+    avatar: "/20260830032843.png",
   },
   snsLinks: [
     {
