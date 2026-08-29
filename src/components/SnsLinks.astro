@@ -48,14 +48,15 @@ const brandColors: Record<string, string> = {
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+          class="group relative flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md overflow-hidden transition-all duration-200"
           style={`--button-color: ${color};`}
         >
+          <span class="absolute inset-0 [background:var(--button-color)] -translate-x-full group-hover:translate-x-0 transition-transform duration-200"></span>
           <span
-            class="grid place-items-center w-8 h-8 rounded-lg text-white [background:var(--button-color)]"
+            class="relative grid place-items-center w-8 h-8 rounded-lg text-white [background:var(--button-color)] group-hover:bg-white/20"
             set:html={icon}
           />
-          <span class="font-semibold text-sm text-gray-800 dark:text-gray-100">{link.name}</span>
+          <span class="relative font-semibold text-sm text-gray-800 dark:text-gray-100 group-hover:text-white">{link.name}</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -64,7 +65,7 @@ const brandColors: Record<string, string> = {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="w-4 h-4 ml-auto text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors"
+            class="relative w-4 h-4 ml-auto text-gray-400 group-hover:text-white transition-colors"
           >
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
             <polyline points="15 3 21 3 21 9" />
@@ -85,7 +86,7 @@ const brandColors: Record<string, string> = {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-gray-500 dark:bg-gray-700 text-white border border-transparent shadow-sm opacity-40 hover:opacity-65 hover:-translate-y-0.5 transition-all duration-200"
+              class="flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-gray-500 dark:bg-gray-700 text-white border border-transparent shadow-sm opacity-40"
             >
               <span
                 class="grid place-items-center w-8 h-8 rounded-lg bg-white/15"
