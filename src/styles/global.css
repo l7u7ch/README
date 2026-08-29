@@ -34,6 +34,40 @@ html {
   transition: background-color 0.3s ease;
 }
 
+.snowfall {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.snowfall__flake {
+  position: absolute;
+  top: -12px;
+  left: calc(var(--x) * 1%);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 999px;
+  background: #94a3b8;
+  opacity: var(--flake-opacity);
+  filter: blur(0.2px);
+  animation: snowfall-fall var(--duration) linear var(--delay) infinite;
+}
+
+.dark .snowfall__flake {
+  background: #ffffff;
+}
+
+@keyframes snowfall-fall {
+  from {
+    transform: translate3d(0, -16px, 0);
+  }
+  to {
+    transform: translate3d(var(--drift), calc(100vh + 28px), 0) rotate(180deg);
+  }
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -45,4 +79,10 @@ html {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snowfall__flake {
+    animation: none;
+  }
 }

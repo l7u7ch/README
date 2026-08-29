@@ -1,0 +1,21 @@
+---
+const flakes = Array.from({ length: 36 }, (_, index) => ({
+  x: (index * 37 + 11) % 100,
+  size: 3 + ((index * 7) % 7),
+  duration: 9 + ((index * 11) % 13),
+  delay: -((index * 13) % 22),
+  drift: -32 + ((index * 17) % 65),
+  opacity: 0.28 + ((index * 9) % 55) / 100,
+}));
+---
+
+<div class="snowfall" aria-hidden="true">
+  {
+    flakes.map((flake) => (
+      <span
+        class="snowfall__flake"
+        style={`--x: ${flake.x}; --size: ${flake.size}px; --duration: ${flake.duration}s; --delay: ${flake.delay}s; --drift: ${flake.drift}px; --flake-opacity: ${flake.opacity};`}
+      />
+    ))
+  }
+</div>
