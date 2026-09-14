@@ -1,5 +1,5 @@
 ---
-const flakes = Array.from({ length: 36 }, (_, index) => ({
+const snowflakes = Array.from({ length: 36 }, (_, index) => ({
   x: (index * 37 + 11) % 100,
   size: 3 + ((index * 7) % 7),
   duration: 9 + ((index * 11) % 13),
@@ -11,10 +11,10 @@ const flakes = Array.from({ length: 36 }, (_, index) => ({
 
 <div class="snowfall" aria-hidden="true">
   {
-    flakes.map((flake) => (
+    snowflakes.map((snowflake) => (
       <span
         class="snowfall__flake"
-        style={`--x: ${flake.x}; --size: ${flake.size}px; --duration: ${flake.duration}s; --delay: ${flake.delay}s; --drift: ${flake.drift}px; --flake-opacity: ${flake.opacity};`}
+        style={`--x: ${snowflake.x}; --size: ${snowflake.size}px; --duration: ${snowflake.duration}s; --delay: ${snowflake.delay}s; --drift: ${snowflake.drift}px; --flake-opacity: ${snowflake.opacity};`}
       />
     ))
   }

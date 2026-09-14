@@ -17,21 +17,20 @@ const { title, description = "" } = Astro.props;
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-    <!-- Google Fonts: Inter -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- フラッシュ防止: テーマ初期化 -->
     <script is:inline>
-      const theme =
+      const preferredTheme =
         localStorage.getItem("theme") ??
         (window.matchMedia("(prefers-color-scheme: dark)").matches
           ? "dark"
           : "light");
-      document.documentElement.classList.toggle("dark", theme === "dark");
+      document.documentElement.classList.toggle("dark", preferredTheme === "dark");
     </script>
   </head>
   <body

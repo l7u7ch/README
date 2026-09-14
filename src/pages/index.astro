@@ -3,11 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 import Snowfall from "../components/Snowfall.astro";
 import ProfileSection from "../components/ProfileSection.astro";
-import SnsLinks from "../components/SnsLinks.astro";
+import SocialLinks from "../components/SocialLinks.astro";
 import { siteConfig } from "../config";
 
-const { profile, snsLinks, footer, siteTitle, siteDescription } = siteConfig;
-const year = new Date().getFullYear();
+const { profile, socialLinks, siteTitle, siteDescription } = siteConfig;
 ---
 
 <BaseLayout title={siteTitle} description={siteDescription}>
@@ -15,40 +14,30 @@ const year = new Date().getFullYear();
   <ThemeToggle />
 
   <main class="relative z-10 max-w-lg mx-auto px-4 py-12 space-y-8">
-    <!-- プロフィール -->
     <section class="animate-[var(--animate-fade-in)]">
       <ProfileSection profile={profile} />
     </section>
 
-    <!-- SNS リンク -->
-    <section class="reveal space-y-2">
-      <SnsLinks links={snsLinks} />
+    <section class="scroll-reveal space-y-2">
+      <SocialLinks links={socialLinks} />
     </section>
-
-    <!-- フッター -->
-    {
-      footer && (
-        <footer class="reveal text-center text-xs text-gray-400 dark:text-gray-600 pb-4">
-          <p>{`© ${year} ${profile.name}`}</p>
-        </footer>
-      )
-    }
   </main>
 </BaseLayout>
 
 <script>
-  // Intersection Observer でスクロール reveal
-  const observer = new IntersectionObserver(
+  const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.1 },
   );
 
-  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  document
+    .querySelectorAll(".scroll-reveal")
+    .forEach((element) => revealObserver.observe(element));
 </script>
