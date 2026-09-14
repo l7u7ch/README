@@ -1,24 +1,19 @@
-export type SnsProvider =
+export type SocialProvider =
   | "bluesky"
   | "github"
-  | "instagram"
-  | "linkedin"
   | "lodestone"
   | "qiita"
-  | "tiktok"
   | "twitter"
-  | "youtube"
-  | "zenn"
-  | "custom";
+  | "zenn";
 
-export type SnsLinkStatus = "active" | "archive" | "hidden";
+export type SocialLinkStatus = "active" | "archived";
 
-export interface SnsLink {
-  provider: SnsProvider;
+export interface SocialLink {
+  provider: SocialProvider;
   name: string;
   url: string;
   brandColor?: string;
-  status: SnsLinkStatus;
+  status: SocialLinkStatus;
 }
 
 export interface ProfileConfig {
@@ -31,8 +26,7 @@ export interface SiteConfig {
   siteTitle: string;
   siteDescription: string;
   profile: ProfileConfig;
-  snsLinks: SnsLink[];
-  footer?: Record<string, never>;
+  socialLinks: SocialLink[];
 }
 
 export const siteConfig: SiteConfig = {
@@ -43,7 +37,7 @@ export const siteConfig: SiteConfig = {
     bio: "System Architect & Warrior of Light",
     avatar: "/avatar.png",
   },
-  snsLinks: [
+  socialLinks: [
     {
       provider: "bluesky",
       name: "Bluesky",
@@ -54,7 +48,7 @@ export const siteConfig: SiteConfig = {
       provider: "twitter",
       name: "Twitter / X",
       url: "https://twitter.com/l7u7ch",
-      status: "archive",
+      status: "archived",
     },
     {
       provider: "github",
@@ -63,34 +57,16 @@ export const siteConfig: SiteConfig = {
       status: "active",
     },
     {
-      provider: "instagram",
-      name: "Instagram",
-      url: "https://instagram.com/",
-      status: "hidden",
-    },
-    {
       provider: "lodestone",
       name: "The Lodestone",
       url: "https://jp.finalfantasyxiv.com/lodestone/character/45284272/",
       status: "active",
     },
     {
-      provider: "youtube",
-      name: "YouTube",
-      url: "https://youtube.com/",
-      status: "hidden",
-    },
-    {
-      provider: "linkedin",
-      name: "LinkedIn",
-      url: "https://linkedin.com/",
-      status: "hidden",
-    },
-    {
       provider: "qiita",
       name: "Qiita",
       url: "https://qiita.com/l7u7ch",
-      status: "archive",
+      status: "archived",
     },
     {
       provider: "zenn",

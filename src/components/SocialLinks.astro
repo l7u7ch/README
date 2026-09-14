@@ -1,0 +1,24 @@
+---
+import type { SocialLink } from "../config";
+import SocialLinkItem from "./SocialLinkItem.astro";
+
+export interface Props {
+  links: SocialLink[];
+}
+
+const { links } = Astro.props;
+const activeLinks = links.filter((link) => link.status === "active");
+const archivedLinks = links.filter((link) => link.status === "archived");
+---
+
+<div class="flex flex-col gap-3 w-full">
+  {activeLinks.map((link) => <SocialLinkItem link={link} />)}
+
+  {
+    archivedLinks.length > 0 && (
+      <div class="flex flex-col gap-3 mt-5">
+        {archivedLinks.map((link) => <SocialLinkItem link={link} />)}
+      </div>
+    )
+  }
+</div>
