@@ -12,7 +12,7 @@ const isArchived = link.status === "archived";
 const brandColor = link.brandColor ?? socialBrandColors[link.provider];
 const linkClasses = isArchived
   ? "flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-gray-500 dark:bg-gray-700 text-white border border-transparent shadow-sm opacity-40"
-  : "group relative flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md overflow-hidden transition-all duration-200";
+  : "group relative flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md overflow-hidden transition-all duration-300";
 const iconContainerClasses = isArchived
   ? "grid place-items-center w-8 h-8 rounded-lg bg-white/15"
   : "relative grid place-items-center w-8 h-8 rounded-lg text-white [background:var(--button-color)] group-hover:bg-white/20";
@@ -33,7 +33,7 @@ const externalLinkIconClasses = isArchived
 >
   {
     !isArchived && (
-      <span class="absolute inset-0 [background:var(--button-color)] -translate-x-full group-hover:translate-x-0 transition-transform duration-200" />
+      <span class="absolute inset-0 [background:var(--button-color)] -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
     )
   }
   <span class={iconContainerClasses}>
