@@ -1,6 +1,7 @@
 export type SocialProvider =
   | "bluesky"
   | "github"
+  | "kofi"
   | "lodestone"
   | "qiita"
   | "twitter"
@@ -72,6 +73,12 @@ export const siteConfig: SiteConfig = {
       provider: "zenn",
       name: "Zenn",
       url: "https://zenn.dev/l7u7ch",
+      status: "active",
+    },
+    {
+      provider: "kofi",
+      name: "Ko-fi",
+      url: "https://ko-fi.com/l7u7ch",
       status: "active",
     },
   ],

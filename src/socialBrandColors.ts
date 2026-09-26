@@ -3,6 +3,7 @@ import type { SocialProvider } from "./config";
 export const socialBrandColors: Record<SocialProvider, string> = {
   bluesky: "#0085FF",
   github: "#333333",
+  kofi: "#FF6433",
   lodestone: "#b22929",
   qiita: "#55C500",
   twitter: "#000000",
