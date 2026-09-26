@@ -20,14 +20,10 @@ const iconContainerClasses = isArchived
     : "relative grid place-items-center w-8 h-8 rounded-lg text-white [background:var(--button-color)] group-hover:bg-white/20";
 const nameClasses = isArchived
   ? "font-semibold text-sm"
-  : link.provider === "kofi"
-    ? "relative font-semibold text-sm text-gray-800 dark:text-gray-100 group-hover:text-gray-900"
-    : "relative font-semibold text-sm text-gray-800 dark:text-gray-100 group-hover:text-white";
+  : "relative font-semibold text-sm text-gray-800 dark:text-gray-100 group-hover:text-white";
 const externalLinkIconClasses = isArchived
   ? "w-4 h-4 ml-auto text-white/80"
-  : link.provider === "kofi"
-    ? "relative z-10 w-4 h-4 ml-auto text-gray-400 group-hover:text-gray-900 transition-colors"
-    : "relative z-10 w-4 h-4 ml-auto text-gray-400 group-hover:text-white transition-colors";
+  : "relative z-10 w-4 h-4 ml-auto text-gray-400 group-hover:text-white transition-colors";
 ---
 
 <a
