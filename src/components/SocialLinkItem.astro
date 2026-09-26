@@ -26,8 +26,8 @@ const nameClasses = isArchived
 const externalLinkIconClasses = isArchived
   ? "w-4 h-4 ml-auto text-white/80"
   : link.provider === "kofi"
-    ? "w-4 h-4 ml-auto text-gray-400 group-hover:text-gray-900 transition-colors"
-    : "w-4 h-4 ml-auto text-gray-400 group-hover:text-white transition-colors";
+    ? "relative z-10 w-4 h-4 ml-auto text-gray-400 group-hover:text-gray-900 transition-colors"
+    : "relative z-10 w-4 h-4 ml-auto text-gray-400 group-hover:text-white transition-colors";
 ---
 
 <a
